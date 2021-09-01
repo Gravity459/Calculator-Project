@@ -286,9 +286,9 @@ function changeDisplayContent(value) {
 function calcStart()
 {
     const buttons = document.querySelectorAll('.operator');
-    numbers.forEach(number => number.addEventListener('click', valueCalled));
-
     const numbers = document.querySelectorAll('.number');
+    
+    numbers.forEach(number => number.addEventListener('click', valueCalled));
     buttons.forEach(button => button.addEventListener('click', valueCalled));
     
     changeDisplayContent('0');
