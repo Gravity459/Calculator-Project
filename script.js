@@ -88,31 +88,7 @@ function valueCalled(e) {
         return;
     }
     
-    // for handling the 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    // for handling the floating points
     if(e.target.value == '.')
     {
         if(!floatFlag)
@@ -130,10 +106,9 @@ function valueCalled(e) {
     // if the operator is not '='
     if(e.target.classList.contains('operator') && e.target.value != '=')
     {
-        // console.log('watch out he has an op : ' + e.target.value);
-        // console.log(currentOperator);
 
-        if(equalFlag && e.target.classList.contains('operator'))
+        // if the last operator was an equal sign
+        if(equalFlag)
         {
             currentOperator = e.target.value;
             equalFlag = 0;
@@ -142,7 +117,6 @@ function valueCalled(e) {
 
         // if num1 is empty then load the entered number in num1 
         // else put the num1flag on and enter it in num2
-
         if(!num1Flag)
         {   
             currentOperator = e.target.value;
@@ -155,9 +129,6 @@ function valueCalled(e) {
             {
                 changeNum1(parseInt(displayCalc));
             }
-
-            // console.log('the number was saved in num1');
-            // console.log(num1);
             changeDisplayContent('');
         }
         
@@ -194,7 +165,7 @@ function valueCalled(e) {
     // if the operator is '='
     else if(e.target.value == '=')
     {
-        // console.log('here');
+
         if(num1Flag && (displayCalc != '0' || displayCalc != '') && currentOperator != '')
         {
             if(checkFloat())
@@ -220,7 +191,7 @@ function valueCalled(e) {
     }
     
 
-    // if it is a value then display it on the screen
+    // if it is a number then display it on the screen
     if(e.target.classList.contains('number'))
     {
         if(equalFlag)
@@ -247,27 +218,23 @@ function checkFloat()
     
 }
 
-function changeNum1(num) {
+function changeNum1(num)
+{
     num1 = num;
-    // console.log('num1 was modified to : ' + num);
-    
     num1Flag = 1;
-    // console.log('num1 flag is now : ' + num1Flag);
     floatFlag = 0;
     displayCalc = '';
 }
 
 function changeNum2(num) {
     num2 = num;
-    // console.log('num2 was modified to : ' + num);
-    
     num2Flag = 1;
-    // console.log('num2 flag is now : ' + num2Flag);
     floatFlag = 0;
 }
 
 
-function resetFlags(){
+function resetFlags()
+{
     displayCalc = '0';
     currentOperator = '';
     num1 = 0;
@@ -278,17 +245,15 @@ function resetFlags(){
     equalFlag = 0;
 }
 
-
+// for changing the display with every button pressed
 function changeDisplayContent(value) {
 
     if(value == '')
     {
         displayCalc = '';
-        // console.log('display was cleared');
     }
     else if(value == 'D')
     {
-        console.log(displayCalc);
         if(displayCalc.length == 1)
         {
             displayCalc = '0';
@@ -297,12 +262,10 @@ function changeDisplayContent(value) {
         {
             displayCalc = displayCalc.slice(0, -1);
         }
-        // console.log('a number was deleted');
     }
     else if(value == 'result')
     {
         displayCalc = result;
-        // console.log('result logged');
     }
     else
     {
@@ -314,27 +277,22 @@ function changeDisplayContent(value) {
         {
             displayCalc += value;
         }
-        // console.log('number added to display : ' + value);
     }
     
     const displaySpan = document.querySelector('#displayCalc');
-    // console.log(displaySpan);
-    
     displaySpan.textContent = displayCalc;
 }
 
 function calcStart()
 {
     const buttons = document.querySelectorAll('.operator');
-    // console.log(buttons);
-    
-    const numbers = document.querySelectorAll('.number');
-    // console.log(numbers);
-    
     numbers.forEach(number => number.addEventListener('click', valueCalled));
+
+    const numbers = document.querySelectorAll('.number');
     buttons.forEach(button => button.addEventListener('click', valueCalled));
     
     changeDisplayContent('0');
 }
 
+// to start the whole calculator
 calcStart();
