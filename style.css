@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, button {
+    font-family: 'Klee One', cursive;;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 238, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer-shape {
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 20% auto;
+    background-color: rgb(255, 0, 255);
+    box-shadow: 10px 10px 5px 0px rgba(92, 92, 92, 0.75);
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5px;
+    width: 96%;
+    height: 100%;
+    margin: 10px;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+#result-display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50%;
+    text-align: right;
+    color: gray;
+    font-size: 25px;
+}
+
+#displayCalc {
+    width: 100%;
+    height: 50%;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 80% auto;
+}
+
+.normal-buttons {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 80% auto;
+    padding-right: 15px;
+}
+
+.numbers-op, .zero-dot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.numbers-op {
+    margin-top: 10px;
+}
+
+.zero-dot {
+    width: 100%;
+    height: 100%;
+}
+
+.special-buttons {
+    height: 100%;
+    display: flex;
+    margin-right: 5px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.special-buttons .btn {
+    width: 90px;
+}
+
+.btn {
+    width: 100px;
+    height: 70px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.minus {
+    margin: 10px 0;
+    margin-top: 22px;
+}
+
+.long-btn {
+    width: 90px;
+    height: 170px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.wide-btn {
+    width: 60%;
+    height: 70px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.btn, .wide-btn, .long-btn {
+    font-size: 25px;
+}
+
+.right-side-btn {
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+
+.btn:hover, .wide-btn:hover {
+    background-color: rgb(201, 201, 201);
+}
+
+.operator {
+    background-color: rgb(255, 0, 200);
+}
+
+#enter {
+    background-color: rgb(255, 0, 106);
+}

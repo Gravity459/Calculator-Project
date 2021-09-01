@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="outer-shape">
+            <div class="display">
+                <span id="result-display"></span>
+                <span id="displayCalc"></span>
+            </div>
+            <div class="buttons">
+                <div class="normal-buttons">
+                    <div class="numbers-op">
+                        <button class="btn operator" value="C">AC</button>
+                        <button class="btn operator" value="/">/</button>
+                        <button class="btn operator" value="*">*</button>
+                        <button class="btn number" value="7">7</button>
+                        <button class="btn number" value="8">8</button>
+                        <button class="btn number" value="9">9</button>
+                        <button class="btn number" value="4">4</button>
+                        <button class="btn number" value="5">5</button>
+                        <button class="btn number" value="6">6</button>
+                        <button class="btn number" value="1">1</button>
+                        <button class="btn number" value="2">2</button>
+                        <button class="btn number" value="3">3</button>    
+                    </div>
+                    
+                    <div class="zero-dot">
+                        <button class="wide-btn number" value="0">0</button>
+                        <button class="btn number" value=".">.</button>
+                    </div>
+                </div>
+                
+                <div class="special-buttons">
+                    <button class="btn operator right-side-btn" value="D">C</button>
+                    <button class="btn operator right-side-btn" value="-">-</button>
+                    <button class="btn operator right-side-btn" value="+">+</button>
+                    <button id="enter" class="long-btn operator" value="=">Enter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
